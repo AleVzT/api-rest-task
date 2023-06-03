@@ -8,13 +8,13 @@ const { check } = require('express-validator');
 const router = Router();
 
 const { fieldsValidators } = require('../middlewares/fields-validators');
-const { getAllTasks, createTask, editTask, deleteTask } = require('../controllers/tasks');
+const { getAllTasks, createTask, editTask, deleteTask, changeStatus } = require('../controllers/tasks');
 
-// Obtener todos las tasks
+// Obtener todos las tasks GET
 router.get('/', getAllTasks );
 
-// Obtener una task by id GET
-router.get('/:id', getTaskById);
+// Cambiar el estado de una task PATCH
+router.patch('/:id', changeStatus);
 
 // Agregar un Task POST
 router.post(

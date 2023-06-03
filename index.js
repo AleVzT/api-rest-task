@@ -17,8 +17,7 @@ app.use( express.json() );
 app.use(cors());
 
 // Rutas
-app.use('/api/auth', require('./routes/auth') );
-app.use('/api/jobs', require('./routes/jobs') );
+app.use('/api/tasks', require('./routes/tasks') );
 
 // Escuchando peticiones
 app.listen( process.env.PORT, () => {
